@@ -1,0 +1,24 @@
+{
+	"name": "MQTT",
+	"author": "Ranlvor",
+	"url": "https://github.com/Ranlvor/Mediawiki-MQTT",
+	"description": "This extention pushes events in the Mediawiki to the MQTT",
+	"version": "0.1",
+	"license-name": "MIT",
+	"type": "hooks",
+	"manifest_version": 1,
+	"config": {
+		"MQTTTopic": "/wiki",
+		"MQTTServerAdress": "127.0.0.1",
+		"MQTTServerPort": 1883,
+		"MQTTClientId": "",
+		"MQTTUsername": "",
+		"MQTTPassword": ""
+	},
+	"Hooks": {
+		"PageContentSaveComplete": [ "MQTT::onPageContentSaveComplete" ]
+	},
+	"AutoloadClasses": {
+		"MQTT": "MQTT.php"
+	}
+}
